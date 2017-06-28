@@ -1,0 +1,62 @@
+{
+  "name": "ng2-library-template",
+  "description": "Template project to create libraries for Angular 2+",
+  "version": "0.0.0",
+  "scripts": {
+    "clean": "rimraf dist",
+    "transpile": "ngc",
+    "rollup:umd": "rollup -c rollup.config.umd.js",
+    "rollup": "npm run rollup:umd",
+    "prebuild": "npm run clean",
+    "build": "npm run transpile && npm run rollup",
+    "postbuild": "node tools/copy-package.js && node tools/clean-package.js"
+  },
+  "main": "bundles/ng2-library-template.umd.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kasemabouali/ng2-library-template.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular4",
+    "module",
+    "library",
+    "component",
+    "template"
+  ],
+  "author": "Kasem Abou Ali <kasemjr@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kasemabouali/ng2-library-template/issues"
+  },
+  "homepage": "https://github.com/kasemabouali/ng2-library-template#readme",
+  "dependencies": {
+    "@angular/core": "^2.4.0 || ^4.0.0",
+    "rxjs": "^5.0.1"
+  },
+  "peerDependencies": {
+    "@angular/core": "^2.4.0 || ^4.0.0",
+    "rxjs": "^5.0.1"
+  },
+  "devDependencies": {
+    "@angular/compiler": ">=2.4.0",
+    "@angular/compiler-cli": ">=2.4.0",
+    "@types/node": "~6.0.60",
+    "codelyzer": "~3.0.1",
+    "del": "~3.0.0",
+    "node-sass": "~4.5.3",
+    "rimraf": "^2.6.1",
+    "rollup": "~0.43.0",
+    "rollup-plugin-angular": "~0.4.4",
+    "rollup-plugin-commonjs": "~8.0.2",
+    "rollup-plugin-node-resolve": "~3.0.0",
+    "rollup-plugin-node-resolve-angular": "^2.0.3",
+    "rollup-plugin-typescript": "~0.8.1",
+    "tslint": "~5.4.3",
+    "typescript": "~2.3.3",
+    "zone.js": "^0.8.4"
+  }
+}
